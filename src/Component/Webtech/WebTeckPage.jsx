@@ -4,6 +4,8 @@ import TechSuccessSection from "./TechSuccessSection";
 import ServicesSection from "./ServicesSection";
 import ExperienceSection from "./ExperienceSection";
 import ProcessSection from "./ProcessSection";
+import Project from "./Project";
+import Price from "./Pricing";
 import CTASection from "./CTASection";
 import Footer from "./Footer";
 
@@ -14,8 +16,10 @@ export default function WebTeckPage() {
             <HeroSection />
             <TechSuccessSection />
             <ServicesSection />
+            <Project />
             <ExperienceSection />
             <ProcessSection />
+            <Price />
             <CTASection />
             <Footer />
         </div>

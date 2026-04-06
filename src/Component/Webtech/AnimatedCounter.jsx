@@ -1,34 +1,30 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
 
-export default function AnimatedCounter({ target, suffix = "" }) {
-    const [count, setCount] = React.useState(0);
-    const ref = React.useRef(null);
-    const inView = React.useRef(false);
+export default function AnimatedCounter({ target, suffix = "", duration = 2 }) {
+    const count = useMotionValue(0);
+    const rounded = useTransform(count, (latest) => Math.round(latest));
 
-    React.useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting && !inView.current) {
-                    inView.current = true;
-                    let start = 0;
-                    const duration = 2000;
-                    const step = target / (duration / 16);
-                    const timer = setInterval(() => {
-                        start += step;
-                        if (start >= target) {
-                            setCount(target);
-                            clearInterval(timer);
-                        } else {
-                            setCount(Math.floor(start));
-                        }
-                    }, 16);
-                }
-            },
-            { threshold: 0.3 }
-        );
-        if (ref.current) observer.observe(ref.current);
-        return () => observer.disconnect();
-    }, [target]);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
 
-    return <span ref={ref}>{count}{suffix}</span>;
+    useEffect(() => {
+        if (isInView) {
+            const controls = animate(count, target, {
+                duration: duration,
+                ease: [0.33, 1, 0.68, 1],
+            });
+            return controls.stop;
+        }
+    }, [isInView, target, duration, count]);
+
+    return (
+        <span ref={ref}>
+            {/* IMPORTANT: Pass 'rounded' to the children of a motion component. 
+               Framer Motion will handle the object-to-string conversion internally.
+            */}
+            <motion.span>{rounded}</motion.span>
+            {suffix}
+        </span>
+    );
 }

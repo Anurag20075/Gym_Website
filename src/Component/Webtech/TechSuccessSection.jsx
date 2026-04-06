@@ -1,16 +1,29 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Users, CheckCircle, ChevronRight } from "lucide-react";
+import { Users, CheckCircle, ChevronRight, Sparkles } from "lucide-react";
+// Assuming these are your animation variants
 import { fadeInLeft, fadeInUp, staggerContainer } from "./variants";
 import AnimatedCounter from "./AnimatedCounter";
 
+const checklistItems = [
+    "End-to-end digital solutions, from strategy to implementation",
+    "Agile methodologies ensuring rapid iteration and quality delivery",
+    "24/7 technical support to guarantee business continuity",
+    "ISO 27001 certified for enterprise-grade data security",
+    "Scalable architecture designed for future global growth"
+];
+
 export default function TechSuccessSection() {
     return (
-        <section className="py-24 lg:py-32 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 to-white" />
+        <section className="py-24 lg:py-32 relative overflow-hidden bg-white">
+            {/* Background Decorative Accents */}
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 -skew-x-12 translate-x-20 pointer-events-none" />
+            <div className="absolute top-40 left-10 w-72 h-72 bg-purple-100/40 rounded-full blur-[100px] animate-pulse" />
+
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    {/* Image */}
+                <div className="grid lg:grid-cols-2 gap-20 items-center">
+
+                    {/* Visual Side */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -18,80 +31,98 @@ export default function TechSuccessSection() {
                         variants={fadeInLeft}
                         className="relative"
                     >
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-purple-500/10">
+                        {/* Decorative frame */}
+                        <div className="absolute -inset-4 border border-purple-100 rounded-[2.5rem] -rotate-2 pointer-events-none" />
+
+                        <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-purple-900/10 z-10">
                             <img
-                                src="https://picsum.photos/seed/webteck-team-office/700/500.jpg"
-                                alt="团队协作"
-                                className="w-full h-[400px] lg:h-[480px] object-cover"
+                                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+                                alt="Innovation Team"
+                                className="w-full h-[450px] lg:h-[550px] object-cover transition-transform duration-700 hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/40 via-transparent to-transparent" />
                         </div>
+
+                        {/* Floating Stats Card */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.4 }}
-                            className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 border border-purple-50"
+                            transition={{ delay: 0.6, type: "spring" }}
+                            className="absolute -bottom-10 -right-4 lg:-right-10 bg-white/90 backdrop-blur-xl rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] p-6 border border-white z-20"
                         >
-                            <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-violet-500 flex items-center justify-center">
-                                    <Users className="w-6 h-6 text-white" />
+                            <div className="flex items-center gap-4">
+                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-purple-200">
+                                    <Users className="w-7 h-7 text-white" />
                                 </div>
                                 <div>
-                                    <p className="text-2xl font-bold text-slate-800">
+                                    <p className="text-3xl font-black text-slate-900 tracking-tighter">
                                         <AnimatedCounter target={150} suffix="+" />
                                     </p>
-                                    <p className="text-xs text-slate-400">专业团队成员</p>
+                                    <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-purple-600">
+                                        Experts On-Board
+                                    </p>
                                 </div>
                             </div>
                         </motion.div>
                     </motion.div>
 
-                    {/* Text Content */}
+                    {/* Content Side */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.3 }}
                         variants={staggerContainer}
+                        className="lg:pl-6"
                     >
-                        <motion.div variants={fadeInUp(0)} className="inline-flex items-center gap-2 mb-4">
-                            <div className="w-8 h-0.5 bg-purple-500 rounded" />
-                            <span className="text-xs font-bold text-purple-600 tracking-widest uppercase">关于我们</span>
+                        <motion.div variants={fadeInUp(0)} className="inline-flex items-center gap-3 mb-6">
+                            <Sparkles className="w-5 h-5 text-purple-500" />
+                            <span className="text-xs font-black text-purple-600 tracking-[0.3em] uppercase">
+                                Who We Are
+                            </span>
                         </motion.div>
 
-                        <motion.h2 variants={fadeInUp(1)} className="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
-                            我们用技术提升
-                            <span className="bg-gradient-to-r from-purple-600 to-violet-500 bg-clip-text text-transparent">商业成功</span>
+                        <motion.h2 variants={fadeInUp(1)} className="text-4xl lg:text-5xl font-bold text-slate-900 leading-[1.1] tracking-tight">
+                            Elevating Businesses Through <br />
+                            <span className="bg-gradient-to-r from-purple-600 to-indigo-500 bg-clip-text text-transparent">
+                                Technical Excellence
+                            </span>
                         </motion.h2>
 
-                        <motion.p variants={fadeInUp(2)} className="mt-5 text-slate-500 leading-relaxed">
-                            自2000年成立以来，WebTeck始终走在技术创新前沿。我们汇聚全球顶尖技术人才，深度理解各行业痛点，以数字化手段为客户创造可衡量的商业价值。
+                        <motion.p variants={fadeInUp(2)} className="mt-8 text-slate-600 text-lg leading-relaxed">
+                            Since 2000, WebTeck has been at the forefront of digital evolution.
+                            We unite world-class talent with a deep understanding of industry challenges
+                            to deliver measurable, high-impact business value.
                         </motion.p>
 
-                        <motion.div variants={fadeInUp(3)} className="mt-8 space-y-4">
-                            {[
-                                "端到端的数字化解决方案，从战略咨询到落地实施",
-                                "敏捷开发方法论，确保项目快速迭代与高质量交付",
-                                "7×24小时技术支持，保障业务持续稳定运行",
-                                "ISO 27001信息安全认证，数据安全有保障",
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-start gap-3">
-                                    <div className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                        <CheckCircle className="w-3.5 h-3.5 text-purple-600" />
+                        {/* Checklist */}
+                        <motion.div variants={fadeInUp(3)} className="mt-10 space-y-3">
+                            {checklistItems.map((item, i) => (
+                                <motion.div
+                                    key={i}
+                                    whileHover={{ x: 5 }}
+                                    className="flex items-start gap-4 p-2 rounded-xl transition-colors hover:bg-purple-50/50 group"
+                                >
+                                    <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-purple-600 transition-colors">
+                                        <CheckCircle className="w-4 h-4 text-purple-600 group-hover:text-white" />
                                     </div>
-                                    <span className="text-sm text-slate-600">{item}</span>
-                                </div>
+                                    <span className="text-sm md:text-base text-slate-700 font-medium tracking-tight leading-snug">
+                                        {item}
+                                    </span>
+                                </motion.div>
                             ))}
                         </motion.div>
 
-                        <motion.div variants={fadeInUp(4)} className="mt-8">
+                        {/* Action Link */}
+                        <motion.div variants={fadeInUp(4)} className="mt-12">
                             <motion.a
-                                href="#"
-                                className="group inline-flex items-center gap-2 text-purple-600 font-semibold text-sm hover:text-purple-700"
-                                whileHover={{ x: 4 }}
+                                href="/about"
+                                className="group relative inline-flex items-center gap-3 py-3 px-1 text-purple-600 font-bold text-sm tracking-widest uppercase overflow-hidden"
                             >
-                                了解更多关于我们
-                                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                <span className="relative z-10">Discover More About Us</span>
+                                <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-purple-100 scale-x-100 origin-left" />
+                                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-purple-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                             </motion.a>
                         </motion.div>
                     </motion.div>
