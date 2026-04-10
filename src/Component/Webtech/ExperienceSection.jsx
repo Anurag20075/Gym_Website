@@ -1,15 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Clock, Users, CheckCircle, Award, Globe, Star } from "lucide-react";
+import { Zap, Code, Rocket, Award, Globe, Star, Layout } from "lucide-react";
 // Assuming these variants exist in your project
 import { fadeInRight, fadeInUp, scaleIn, staggerContainer } from "./variants";
 import AnimatedCounter from "./AnimatedCounter";
 
 const stats = [
-    { icon: Clock, value: 24, suffix: "+", label: "Years of Experience" },
-    { icon: Users, value: 2000, suffix: "+", label: "Global Clients" },
-    { icon: CheckCircle, value: 5000, suffix: "+", label: "Projects Delivered" },
-    { icon: Award, value: 98, suffix: "%", label: "Satisfaction Rate" },
+    { icon: Zap, value: 98, suffix: "/100", label: "Avg Performance" },
+    { icon: Layout, value: 12, suffix: "+", label: "Projects Completed" },
+    { icon: Rocket, value: 14, suffix: "Days", label: "Avg Delivery Time" },
+    { icon: Award, value: 100, suffix: "%", label: "Clean Code Guarantee" },
 ];
 
 export default function ExperienceSection() {
@@ -40,21 +40,21 @@ export default function ExperienceSection() {
                         <motion.div variants={fadeInUp(0)} className="inline-flex items-center gap-3 mb-6">
                             <div className="w-10 h-[2px] bg-gradient-to-r from-purple-500 to-transparent rounded" />
                             <span className="text-xs font-black text-purple-400 tracking-[0.3em] uppercase">
-                                Our Excellence
+                                Our Methodology
                             </span>
                         </motion.div>
 
                         <motion.h2 variants={fadeInUp(1)} className="text-4xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tighter">
-                            24+ Years of
+                            Engineering the
                             <span className="block bg-gradient-to-r from-purple-400 via-fuchsia-300 to-indigo-300 bg-clip-text text-transparent">
-                                IT Innovation
+                                Future Standard
                             </span>
                         </motion.h2>
 
                         <motion.p variants={fadeInUp(2)} className="mt-6 text-lg text-slate-300/80 leading-relaxed max-w-xl">
-                            For over two decades, we've pioneered digital evolution. From early enterprise
-                            systems to modern AI-driven ecosystems, we bridge the gap between complex
-                            technology and seamless business growth.
+                            We don't do template-based websites. We build custom-engineered digital
+                            products using a modern tech stack designed for speed, SEO, and massive
+                            scale. Every line of code is written with performance first.
                         </motion.p>
 
                         <motion.div variants={fadeInUp(3)} className="mt-12 grid grid-cols-2 gap-6">
@@ -68,9 +68,9 @@ export default function ExperienceSection() {
                                     <div className="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4 border border-purple-500/20">
                                         <s.icon className="w-5 h-5 text-purple-400" />
                                     </div>
-                                    <p className="text-3xl font-bold text-white tracking-tight">
+                                    <div className="text-3xl font-bold text-white tracking-tight">
                                         <AnimatedCounter target={s.value} suffix={s.suffix} />
-                                    </p>
+                                    </div>
                                     <p className="text-xs font-medium text-slate-400 uppercase tracking-wider mt-1">{s.label}</p>
                                 </motion.div>
                             ))}
@@ -89,14 +89,14 @@ export default function ExperienceSection() {
                             {/* Main Image Container */}
                             <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10">
                                 <img
-                                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
-                                    alt="Team Collaboration"
+                                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
+                                    alt="Clean Code Development"
                                     className="w-full h-[540px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60" />
                             </div>
 
-                            {/* Floating Badge 1: Global */}
+                            {/* Floating Badge 1: Performance */}
                             <motion.div
                                 animate={{ y: [0, -15, 0] }}
                                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -104,16 +104,16 @@ export default function ExperienceSection() {
                             >
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center shadow-[0_0_20px_rgba(147,51,234,0.4)]">
-                                        <Globe className="w-6 h-6 text-white" />
+                                        <Zap className="w-6 h-6 text-white" />
                                     </div>
                                     <div>
-                                        <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Global Presence</p>
-                                        <p className="text-lg font-bold text-white">30+ Countries</p>
+                                        <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Tech Stack</p>
+                                        <p className="text-lg font-bold text-white">Full-Stack</p>
                                     </div>
                                 </div>
                             </motion.div>
 
-                            {/* Floating Badge 2: Rating */}
+                            {/* Floating Badge 2: Delivery */}
                             <motion.div
                                 animate={{ y: [0, 15, 0] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
@@ -121,11 +121,11 @@ export default function ExperienceSection() {
                             >
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.4)]">
-                                        <Star className="w-6 h-6 text-white fill-white" />
+                                        <Code className="w-6 h-6 text-white" />
                                     </div>
                                     <div>
-                                        <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Industry Rank</p>
-                                        <p className="text-lg font-bold text-white">Top Rated</p>
+                                        <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Approach</p>
+                                        <p className="text-lg font-bold text-white">Bespoke Code</p>
                                     </div>
                                 </div>
                             </motion.div>

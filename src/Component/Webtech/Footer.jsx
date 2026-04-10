@@ -22,7 +22,7 @@ export default function Footer() {
                                     <Zap className="w-6 h-6 text-white fill-purple-500" />
                                 </div>
                             </div>
-                            <span className="text-2xl font-bold text-white tracking-tight">WebTeck</span>
+                            <span className="text-2xl font-bold text-white tracking-tight">Elevate WebWork</span>
                         </div>
 
                         <p className="text-sm leading-7 text-slate-400 max-w-sm">

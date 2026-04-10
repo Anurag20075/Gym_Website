@@ -29,30 +29,30 @@ const services = [
         iconColor: "text-indigo-600",
         hoverBorder: "hover:border-indigo-200"
     },
-    {
-        icon: Smartphone,
-        title: "Mobile App Dev",
-        desc: "Cross-platform mobile applications offering native experiences for iOS and Android devices.",
-        bg: "from-emerald-500/10 to-teal-500/10",
-        iconColor: "text-emerald-600",
-        hoverBorder: "hover:border-emerald-200"
-    },
-    {
-        icon: Database,
-        title: "Cloud & DevOps",
-        desc: "Cloud architecture, containerization, and CI/CD pipelines to slash operational overhead.",
-        bg: "from-amber-500/10 to-orange-500/10",
-        iconColor: "text-amber-600",
-        hoverBorder: "hover:border-amber-200"
-    },
-    {
-        icon: Shield,
-        title: "Cyber Security",
-        desc: "Comprehensive security audits, penetration testing, and compliance to protect your digital assets.",
-        bg: "from-rose-500/10 to-red-500/10",
-        iconColor: "text-rose-600",
-        hoverBorder: "hover:border-rose-200"
-    },
+    // {
+    //     icon: Smartphone,
+    //     title: "Mobile App Dev",
+    //     desc: "Cross-platform mobile applications offering native experiences for iOS and Android devices.",
+    //     bg: "from-emerald-500/10 to-teal-500/10",
+    //     iconColor: "text-emerald-600",
+    //     hoverBorder: "hover:border-emerald-200"
+    // },
+    // {
+    //     icon: Database,
+    //     title: "Cloud & DevOps",
+    //     desc: "Cloud architecture, containerization, and CI/CD pipelines to slash operational overhead.",
+    //     bg: "from-amber-500/10 to-orange-500/10",
+    //     iconColor: "text-amber-600",
+    //     hoverBorder: "hover:border-amber-200"
+    // },
+    // {
+    //     icon: Shield,
+    //     title: "Cyber Security",
+    //     desc: "Comprehensive security audits, penetration testing, and compliance to protect your digital assets.",
+    //     bg: "from-rose-500/10 to-red-500/10",
+    //     iconColor: "text-rose-600",
+    //     hoverBorder: "hover:border-rose-200"
+    // },
 ];
 
 export default function ServicesSection() {

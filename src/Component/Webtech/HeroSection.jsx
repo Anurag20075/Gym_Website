@@ -4,18 +4,16 @@ import {
     ArrowRight,
     Star,
     Code,
-    Palette,
-    Globe,
-    BarChart3,
-    Database,
     Shield,
-    Users,
+    BarChart3,
     CheckCircle,
     Award,
-    Play
+    Play,
+    Zap,
+    Cpu,
+    Smartphone
 } from "lucide-react";
 
-// Local variants if not imported
 const floatAnimation = {
     animate: {
         y: [0, -15, 0],
@@ -49,9 +47,9 @@ export default function HeroSection() {
                         transition={{ duration: 0.5 }}
                         className="inline-flex items-center gap-2 bg-white border border-purple-100 shadow-sm rounded-full px-4 py-1.5 mb-8"
                     >
-                        <Star className="w-4 h-4 text-purple-500 fill-purple-500" />
+                        <Zap className="w-4 h-4 text-purple-600 fill-purple-600" />
                         <span className="text-[11px] font-bold text-purple-700 tracking-wider uppercase">
-                            24+ Years of IT Excellence
+                            Modern Full-Stack Engineering
                         </span>
                     </motion.div>
 
@@ -61,9 +59,9 @@ export default function HeroSection() {
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-slate-900"
                     >
-                        Engineering the{" "}
+                        Building High-Performance{" "}
                         <span className="bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-500 bg-clip-text text-transparent">
-                            Future of Business
+                            Digital Products
                         </span>
                     </motion.h1>
 
@@ -73,9 +71,9 @@ export default function HeroSection() {
                         transition={{ duration: 0.8, delay: 0.1 }}
                         className="mt-8 text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0"
                     >
-                        We deliver innovative digital solutions for global enterprises.
-                        By leveraging cutting-edge technology, we transform complex
-                        operations into seamless experiences.
+                        We help founders and businesses ship production-ready web and mobile
+                        applications. High-quality code, pixel-perfect design, and
+                        scalable architecture—delivered in weeks, not months.
                     </motion.p>
 
                     <motion.div
@@ -85,12 +83,12 @@ export default function HeroSection() {
                         className="mt-10 flex flex-wrap justify-center lg:justify-start items-center gap-5"
                     >
                         <motion.a
-                            href="#"
+                            href="#pricing"
                             className="group inline-flex items-center gap-2 bg-slate-900 text-white font-semibold px-8 py-4 rounded-2xl hover:bg-purple-600 transition-all shadow-lg shadow-slate-200"
                             whileHover={{ y: -2 }}
                             whileTap={{ scale: 0.98 }}
                         >
-                            Start Your Project
+                            Build My Project
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </motion.a>
 
@@ -101,37 +99,12 @@ export default function HeroSection() {
                             whileTap={{ scale: 0.98 }}
                         >
                             <Play className="w-4 h-4 fill-current" />
-                            Watch Demo
+                            Our Services
                         </motion.a>
-                    </motion.div>
-
-                    {/* Social Proof */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        className="mt-12 flex flex-col sm:flex-row items-center gap-4 border-t border-slate-200 pt-8"
-                    >
-                        <div className="flex -space-x-3">
-                            {[1, 2, 3, 4].map((i) => (
-                                <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden shadow-sm">
-                                    <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="user" />
-                                </div>
-                            ))}
-                        </div>
-                        <div className="text-center sm:text-left">
-                            <div className="flex items-center justify-center sm:justify-start gap-1">
-                                {[1, 2, 3, 4, 5].map((s) => (
-                                    <Star key={s} className="w-4 h-4 text-amber-400 fill-amber-400" />
-                                ))}
-                                <span className="ml-2 font-bold text-slate-900">4.9/5</span>
-                            </div>
-                            <p className="text-sm text-slate-500 font-medium">Trusted by 2,000+ global partners</p>
-                        </div>
                     </motion.div>
                 </div>
 
-                {/* Right Illustration - Refined Glassmorphism UI */}
+                {/* Right Illustration */}
                 <motion.div
                     initial={{ opacity: 0, x: 40 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -140,72 +113,73 @@ export default function HeroSection() {
                 >
                     <div className="relative w-full aspect-square flex items-center justify-center">
 
-                        {/* Main Central Card */}
+                        {/* Main Central UI Card */}
                         <motion.div
                             {...floatAnimation}
                             className="w-80 h-96 bg-white rounded-[2.5rem] shadow-2xl shadow-purple-200 border border-purple-50 p-8 z-20 flex flex-col justify-between"
                         >
                             <div className="space-y-6">
-                                <div className="w-14 h-14 bg-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-200">
-                                    <Globe className="w-8 h-8 text-white" />
+                                <div className="w-14 h-14 bg-slate-900 rounded-2xl flex items-center justify-center shadow-lg">
+                                    <Code className="w-8 h-8 text-white" />
                                 </div>
-                                <div className="space-y-2">
-                                    <div className="h-2 w-24 bg-slate-100 rounded-full" />
-                                    <div className="h-3 w-48 bg-slate-200 rounded-full" />
-                                    <div className="h-3 w-32 bg-slate-200 rounded-full" />
+                                <div className="space-y-3">
+                                    <div className="h-2 w-24 bg-purple-100 rounded-full" />
+                                    <div className="h-3 w-48 bg-slate-100 rounded-full" />
+                                    <div className="h-3 w-40 bg-slate-100 rounded-full" />
                                 </div>
-                                <div className="pt-4 grid grid-cols-2 gap-4">
-                                    <div className="h-16 bg-slate-50 rounded-xl border border-slate-100" />
-                                    <div className="h-16 bg-slate-50 rounded-xl border border-slate-100" />
+                                <div className="pt-4 space-y-3">
+                                    <div className="h-12 bg-slate-50 rounded-xl border border-slate-100 flex items-center px-4">
+                                        <div className="w-full h-1.5 bg-green-400/20 rounded-full overflow-hidden">
+                                            <motion.div
+                                                initial={{ width: 0 }}
+                                                animate={{ width: "80%" }}
+                                                transition={{ duration: 2, repeat: Infinity }}
+                                                className="h-full bg-green-500"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="h-12 bg-slate-50 rounded-xl border border-slate-100" />
                                 </div>
                             </div>
                             <div className="flex items-center justify-between">
                                 <div className="flex -space-x-2">
-                                    <div className="w-8 h-8 rounded-full bg-indigo-100 border-2 border-white" />
-                                    <div className="w-8 h-8 rounded-full bg-purple-100 border-2 border-white" />
+                                    <div className="w-8 h-8 rounded-full bg-purple-600 border-2 border-white" />
+                                    <div className="w-8 h-8 rounded-full bg-indigo-500 border-2 border-white" />
                                 </div>
-                                <div className="w-20 h-8 bg-purple-600 rounded-lg" />
+                                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Live Deployment</div>
                             </div>
                         </motion.div>
 
-                        {/* Floating Tech Icons - Better Positions */}
+                        {/* Floating Badges */}
                         <motion.div
                             animate={{ y: [0, 20, 0], rotate: [0, 5, 0] }}
                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                             className="absolute top-10 left-0 w-20 h-20 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-slate-100 z-30"
                         >
-                            <Code className="w-8 h-8 text-indigo-500" />
+                            <Zap className="w-8 h-8 text-amber-500" />
                         </motion.div>
 
                         <motion.div
                             animate={{ y: [0, -25, 0], rotate: [0, -8, 0] }}
                             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute bottom-20 right-0 w-24 h-24 bg-gradient-to-br from-fuchsia-500 to-purple-600 rounded-3xl shadow-xl flex items-center justify-center z-30"
+                            className="absolute bottom-20 right-0 w-24 h-24 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-3xl shadow-xl flex items-center justify-center z-30"
                         >
-                            <Shield className="w-10 h-10 text-white" />
+                            <Smartphone className="w-10 h-10 text-white" />
                         </motion.div>
 
-                        <motion.div
-                            animate={{ x: [0, 15, 0] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute top-0 right-10 w-16 h-16 bg-amber-400 rounded-2xl shadow-lg flex items-center justify-center z-10"
-                        >
-                            <BarChart3 className="w-7 h-7 text-white" />
-                        </motion.div>
-
-                        {/* Stats Badges */}
+                        {/* New Metrics */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.8 }}
                             className="absolute top-1/2 -left-12 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-4 flex items-center gap-4 border border-white z-40"
                         >
-                            <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                                <CheckCircle className="w-6 h-6 text-green-600" />
+                            <div className="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center">
+                                <BarChart3 className="w-6 h-6 text-indigo-600" />
                             </div>
                             <div>
-                                <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Success Rate</p>
-                                <p className="text-lg font-black text-slate-800">99.8%</p>
+                                <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Site Speed</p>
+                                <p className="text-lg font-black text-slate-800">98/100</p>
                             </div>
                         </motion.div>
 
@@ -215,32 +189,17 @@ export default function HeroSection() {
                             transition={{ delay: 1 }}
                             className="absolute bottom-10 left-1/4 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-4 flex items-center gap-4 border border-white z-40"
                         >
-                            <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-                                <Award className="w-6 h-6 text-purple-600" />
+                            <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center">
+                                <CheckCircle className="w-6 h-6 text-green-600" />
                             </div>
                             <div>
-                                <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Awards</p>
-                                <p className="text-lg font-black text-slate-800">50+</p>
+                                <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Uptime</p>
+                                <p className="text-lg font-black text-slate-800">99.9%</p>
                             </div>
                         </motion.div>
                     </div>
                 </motion.div>
             </div>
-
-            {/* Scroll Indicator */}
-            <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block"
-            >
-                <div className="w-7 h-12 rounded-full border-2 border-slate-300 flex justify-center pt-2">
-                    <motion.div
-                        animate={{ opacity: [1, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                        className="w-1.5 h-1.5 bg-purple-500 rounded-full"
-                    />
-                </div>
-            </motion.div>
         </section>
     );
 }

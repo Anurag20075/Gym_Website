@@ -6,7 +6,7 @@ const links = [
     { name: "Home", href: "#" },
     { name: "About", href: "#" },
     { name: "Services", href: "#" },
-    { name: "Portfolio", href: "#" },
+    // { name: "Portfolio", href: "#" },
     { name: "Team", href: "#" },
     { name: "Contact", href: "#" },
 ];
@@ -41,7 +41,7 @@ export default function Navbar() {
                         <Zap className="w-6 h-6 text-white fill-current" />
                     </div>
                     <span className="text-2xl font-black tracking-tight text-slate-900">
-                        Web<span className="text-indigo-600">Teck</span>
+                        Elevate<span className="text-indigo-600">Web</span>Work
                     </span>
                 </motion.a>
 

@@ -5,23 +5,23 @@ import { Check, ArrowRight } from "lucide-react";
 const plans = [
     {
         name: "Starter",
-        price: "999",
-        desc: "Best for small startups and MVPs.",
-        features: ["UI/UX Design", "Responsive Web App", "Basic SEO", "1 Month Support"],
+        price: "215",
+        desc: "Perfect for local businesses and landing pages.",
+        features: ["Local Business Focused", "Responsive Design", "Custom UI/UX", "SEO Ready", "7-10 Days Delivery"],
         highlight: false
     },
     {
-        name: "Professional",
-        price: "2,499",
-        desc: "Ideal for growing businesses.",
-        features: ["Everything in Starter", "Custom Backend", "Mobile App (iOS/Android)", "Cloud Hosting", "Priority Support"],
+        name: "Growth & E-Com",
+        price: "430",
+        desc: "Ideal for expanding online stores and dynamic sites.",
+        features: ["Everything in Starter", "CMS Control Panel", "Payment Gateway", "Lead Tracking", "Admin Dashboard"],
         highlight: true
     },
     {
-        name: "Enterprise",
-        price: "Custom",
-        desc: "For global-scale operations.",
-        features: ["Dedicated Team", "Full Cyber Security", "24/7 DevOps Support", "AI Integration", "Lifetime Updates"],
+        name: "Advanced",
+        price: "1,080",
+        desc: "Complex SaaS and multi-vendor solutions.",
+        features: ["Custom SaaS Solutions", "Multi-vendor Platforms", "API Integrations", "Advanced Security", "Priority Support"],
         highlight: false
     }
 ];
@@ -32,7 +32,7 @@ export default function PriceSection() {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                     <h2 className="text-4xl font-bold text-slate-900 tracking-tight">Transparent <span className="text-purple-600">Pricing</span></h2>
-                    <p className="mt-4 text-slate-500">No hidden fees. Choose the plan that fits your vision.</p>
+                    <p className="mt-4 text-slate-500">Scalable solutions for your digital growth. Prices converted at ₹92.66/USD.</p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8 items-center">
@@ -44,8 +44,8 @@ export default function PriceSection() {
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
                             className={`relative p-10 rounded-[2.5rem] transition-all duration-300 ${plan.highlight
-                                    ? "bg-slate-900 text-white shadow-2xl shadow-purple-500/20 scale-105 z-10"
-                                    : "bg-white text-slate-900 border border-slate-100"
+                                ? "bg-slate-900 text-white shadow-2xl shadow-purple-500/20 scale-105 z-10"
+                                : "bg-white text-slate-900 border border-slate-100"
                                 }`}
                         >
                             {plan.highlight && (
@@ -59,7 +59,7 @@ export default function PriceSection() {
 
                             <div className="flex items-baseline gap-1 mb-8">
                                 <span className="text-4xl font-black">${plan.price}</span>
-                                {plan.price !== "Custom" && <span className="text-sm opacity-60">/project</span>}
+                                <span className="text-sm opacity-60">/start</span>
                             </div>
 
                             <div className="space-y-4 mb-10">
@@ -74,10 +74,10 @@ export default function PriceSection() {
                             </div>
 
                             <button className={`w-full py-4 rounded-2xl font-bold transition-all flex items-center justify-center gap-2 group ${plan.highlight
-                                    ? "bg-purple-600 text-white hover:bg-purple-500"
-                                    : "bg-slate-100 text-slate-900 hover:bg-slate-200"
+                                ? "bg-purple-600 text-white hover:bg-purple-500"
+                                : "bg-slate-100 text-slate-900 hover:bg-slate-200"
                                 }`}>
-                                Choose Plan
+                                Get Started
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </button>
                         </motion.div>
