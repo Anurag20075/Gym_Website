@@ -1,5 +1,5 @@
-import React from "react";
-import { Zap, Send } from "lucide-react";
+// import React from "react";
+import { Zap, Send, Phone, Mail, MapPin } from "lucide-react";
 
 const footerLinks = {
     "Services": ["UI/UX Design", "Web Development", "Digital Marketing"],
@@ -29,18 +29,6 @@ export default function Footer() {
                             Empowering digital transformation for over 24 years. We build trusted solutions
                             using cutting-edge technology to drive global business growth.
                         </p>
-
-                        {/* <div className="flex items-center gap-4">
-                            {[Twitter, Linkedin].map((Icon, i) => (
-                                <a
-                                    key={i}
-                                    href="#"
-                                    className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:border-purple-500 hover:text-white transition-all duration-300"
-                                >
-                                    <Icon className="w-5 h-5" />
-                                </a>
-                            ))}
-                        </div> */}
                     </div>
 
                     {/* Navigation Links */}
@@ -59,27 +47,39 @@ export default function Footer() {
                         </div>
                     ))}
 
-                    {/* Newsletter / Contact Hint */}
-                    <div className="lg:col-span-1">
-                        <h4 className="text-sm font-bold text-white uppercase tracking-widest mb-6">Stay Updated</h4>
-                        <div className="relative">
-                            <input
-                                type="email"
-                                placeholder="Email address"
-                                className="w-full bg-slate-900 border border-slate-800 rounded-lg py-2 px-4 text-sm focus:outline-none focus:border-purple-500 transition-colors"
-                            />
-                            <button className="absolute right-1 top-1 p-1.5 bg-purple-600 rounded-md hover:bg-purple-500 transition-colors">
-                                <Send className="w-4 h-4 text-white" />
-                            </button>
+                    {/* Enhanced Contact Section */}
+                    <div className="lg:col-span-1 mr-5">
+                        <h4 className="text-sm font-bold text-white uppercase tracking-widest mb-6">Contact Us</h4>
+
+                        <div className="space-y-4 text-sm text-slate-400">
+                            {/* Phone with click-to-call */}
+                            <a href="tel:+916398802517" className="flex items-start gap-3 group cursor-pointer hover:text-white transition-colors">
+                                <Phone className="w-4 h-4 text-purple-500 mt-0.5 shrink-0" />
+                                <span>+91 6398802517</span>
+                            </a>
+
+                            {/* Email with click-to-mail */}
+                            <a href="mailto:elevatewebwork8@gmail.com" className="flex items-start gap-3 group cursor-pointer hover:text-white transition-colors">
+                                <Mail className="w-4 h-4 text-purple-500 mt-0.5 shrink-0" />
+                                <span>elevatewebwork8@gmail.com</span>
+                            </a>
+
+                            {/* MapPin with link to Google Maps */}
+                            <a
+                                href="https://www.google.com/maps?q=Agra,+Uttar+Pradesh,+India"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start gap-3 group cursor-pointer hover:text-white transition-colors"
+                            >
+                                <MapPin className="w-4 h-4 text-purple-500 mt-0.5 shrink-0" />
+                                <span>Agra, Uttar Pradesh, India</span>
+                            </a>
                         </div>
-                        <p className="mt-4 text-[11px] text-slate-500 italic">
-                            Subscribe to get our latest news and tech insights.
-                        </p>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="pt-10 flex flex-col md:row-row items-center justify-between gap-6">
+                <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="flex flex-col items-center md:items-start gap-1">
                         <p className="text-xs text-slate-500">
                             © {new Date().getFullYear()} WebTeck Inc. Built with precision for the modern web.
@@ -95,6 +95,6 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-        </footer >
+        </footer>
     );
 }
