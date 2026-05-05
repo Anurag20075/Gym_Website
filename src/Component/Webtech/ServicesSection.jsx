@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Palette, Megaphone, Code, Smartphone, Database, Shield, ArrowRight } from "lucide-react";
-// Assuming these variants are standard across your app
 import { fadeInUp, scaleIn, staggerContainer } from "./variants";
 
 const services = [
@@ -29,35 +28,11 @@ const services = [
         iconColor: "text-indigo-600",
         hoverBorder: "hover:border-indigo-200"
     },
-    // {
-    //     icon: Smartphone,
-    //     title: "Mobile App Dev",
-    //     desc: "Cross-platform mobile applications offering native experiences for iOS and Android devices.",
-    //     bg: "from-emerald-500/10 to-teal-500/10",
-    //     iconColor: "text-emerald-600",
-    //     hoverBorder: "hover:border-emerald-200"
-    // },
-    // {
-    //     icon: Database,
-    //     title: "Cloud & DevOps",
-    //     desc: "Cloud architecture, containerization, and CI/CD pipelines to slash operational overhead.",
-    //     bg: "from-amber-500/10 to-orange-500/10",
-    //     iconColor: "text-amber-600",
-    //     hoverBorder: "hover:border-amber-200"
-    // },
-    // {
-    //     icon: Shield,
-    //     title: "Cyber Security",
-    //     desc: "Comprehensive security audits, penetration testing, and compliance to protect your digital assets.",
-    //     bg: "from-rose-500/10 to-red-500/10",
-    //     iconColor: "text-rose-600",
-    //     hoverBorder: "hover:border-rose-200"
-    // },
 ];
 
 export default function ServicesSection() {
     return (
-        <section className="py-24 lg:py-32 relative bg-[#FDFDFF]" id="services">
+        <section className="py-24 lg:py-32 relative bg-[#FDFDFF]" id="services-section">
             {/* Soft Ambient Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-purple-100/30 rounded-full blur-[120px]" />

@@ -1,16 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import {
     ArrowRight,
-    Star,
     Code,
-    Shield,
     BarChart3,
     CheckCircle,
-    Award,
     Play,
     Zap,
-    Cpu,
     Smartphone
 } from "lucide-react";
 
@@ -21,7 +17,18 @@ const floatAnimation = {
     }
 };
 
-export default function HeroSection() {
+export default function HeroSection({ servicesRef }) {
+
+    const handleScrollToServices = () => {
+        const element = document.getElementById("services-section");
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+    const whatsappNumber = "916398802517";
+    const message = encodeURIComponent("Hi! I'm interested in building a project with your agency. Can we discuss?");
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
     return (
         <section className="relative min-h-screen flex items-center overflow-hidden pt-20 bg-slate-50/50">
             {/* Background Decorative Elements */}
@@ -83,7 +90,9 @@ export default function HeroSection() {
                         className="mt-10 flex flex-wrap justify-center lg:justify-start items-center gap-5"
                     >
                         <motion.a
-                            href="#pricing"
+                            href={whatsappUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="group inline-flex items-center gap-2 bg-slate-900 text-white font-semibold px-8 py-4 rounded-2xl hover:bg-purple-600 transition-all shadow-lg shadow-slate-200"
                             whileHover={{ y: -2 }}
                             whileTap={{ scale: 0.98 }}
@@ -92,15 +101,15 @@ export default function HeroSection() {
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </motion.a>
 
-                        <motion.a
-                            href="#"
+                        <motion.button
                             className="inline-flex items-center gap-3 text-slate-700 font-semibold px-8 py-4 rounded-2xl border border-slate-200 bg-white/50 backdrop-blur-sm hover:bg-white transition-all shadow-sm"
                             whileHover={{ y: -2 }}
                             whileTap={{ scale: 0.98 }}
+                            onClick={handleScrollToServices}
                         >
                             <Play className="w-4 h-4 fill-current" />
                             Our Services
-                        </motion.a>
+                        </motion.button>
                     </motion.div>
                 </div>
 

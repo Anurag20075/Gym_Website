@@ -8,6 +8,7 @@ import Project from "./Project";
 import Price from "./Pricing";
 import CTASection from "./CTASection";
 import Footer from "./Footer";
+import ClientTestimonials from "./Testimonial";
 
 export default function WebTeckPage() {
     return (
@@ -19,7 +20,8 @@ export default function WebTeckPage() {
             <Project />
             <ExperienceSection />
             <ProcessSection />
-            <Price />
+            <ClientTestimonials />
+            {/* <Price /> */}
             <CTASection />
             <Footer />
         </div>

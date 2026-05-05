@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Zap, Menu, X, ArrowRight } from "lucide-react";
 
 const links = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#" },
-    { name: "Services", href: "#" },
-    // { name: "Portfolio", href: "#" },
-    { name: "Team", href: "#" },
-    { name: "Contact", href: "#" },
+    // { name: "Home", href: "/" },
+    // { name: "About", href: "/webtech/about" },
+    // { name: "Services", href: "/webtech/services" },
+    // // { name: "Portfolio", href: "#" },
+    // { name: "Team", href: "/webtech/team" },
+    // { name: "Contact", href: "/webtech/contact" },
 ];
 
 export default function Navbar() {
@@ -20,7 +20,9 @@ export default function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
+    const whatsappNumber = "916398802517";
+    const message = encodeURIComponent("Hi! I'm interested in building a project with your agency. Can we discuss?");
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
     return (
         <motion.nav
             initial={{ y: -100 }}
@@ -63,9 +65,13 @@ export default function Navbar() {
                 <div className="hidden lg:flex items-center gap-6">
 
                     <motion.button
+                        href={whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05, boxShadow: "0 10px 20px -10px rgba(79, 70, 229, 0.5)" }}
                         whileTap={{ scale: 0.98 }}
                         className="flex items-center gap-2 bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold tracking-wide"
+                        onClick={() => window.open(whatsappUrl, "_blank")}
                     >
                         Free Consultation
                         <ArrowRight className="w-4 h-4" />

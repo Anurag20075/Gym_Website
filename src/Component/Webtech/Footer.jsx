@@ -2,9 +2,9 @@ import React from "react";
 import { Zap, Send } from "lucide-react";
 
 const footerLinks = {
-    "Services": ["UI/UX Design", "Web Development", "Mobile Apps", "Digital Marketing", "Cloud Services", "Cybersecurity"],
+    "Services": ["UI/UX Design", "Web Development", "Digital Marketing"],
     "Company": ["About Us", "Our Team", "Our Journey", "Company Culture", "Careers"],
-    "Support": ["Help Center", "Documentation", "API Reference", "Privacy Policy", "Service Terms"],
+    "Support": ["Help Center", "Documentation", "Privacy Policy", "Service Terms"],
 };
 
 export default function Footer() {
